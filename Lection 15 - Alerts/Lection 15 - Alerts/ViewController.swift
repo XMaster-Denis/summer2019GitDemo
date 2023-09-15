@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     enum Films: String {
         case film1 = "Aladin"
         case film2 = "SpiderMan"
+        case film3 = "Iron Man"
     }
     
     override func viewDidLoad() {
@@ -54,18 +55,21 @@ class ViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default){_ in
             print("Permission received")
         }
-        let filmAction = UIAlertAction(title: "Film", style: .default, handler: handlerAction)
+        let filmAction0 = UIAlertAction(title: "Film", style: .default, handler: handlerAction)
         
-        let filmAction2 = UIAlertAction(title: Films.film1.rawValue, style: .default, handler: handlerFilm(.film1))
+        let filmAction1 = UIAlertAction(title: Films.film1.rawValue, style: .default, handler: handlerFilm(.film1))
         
-        let filmAction3 = UIAlertAction(title: Films.film2.rawValue, style: .default, handler: handlerFilm(.film2))
+        let filmAction2 = UIAlertAction(title: Films.film2.rawValue, style: .default, handler: handlerFilm(.film2))
+          
+        let filmAction3 = UIAlertAction(title: Films.film3.rawValue, style: .default, handler: handlerFilm(.film3))
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){_ in
             print("Permission  not recieved")
         }
         
         alert.addAction(okAction)
-        alert.addAction(filmAction)
+        alert.addAction(filmAction0)
+        alert.addAction(filmAction1)
         alert.addAction(filmAction2)
         alert.addAction(filmAction3)
         alert.addAction(cancelAction)
