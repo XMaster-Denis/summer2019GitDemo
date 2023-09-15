@@ -13,6 +13,7 @@ class ViewController: UIViewController {
         case film1 = "Aladin"
         case film2 = "SpiderMan"
         case film3 = "Iron Man"
+        case film5 = "Avergence"
     }
     
     override func viewDidLoad() {
@@ -62,7 +63,9 @@ class ViewController: UIViewController {
         let filmAction2 = UIAlertAction(title: Films.film2.rawValue, style: .default, handler: handlerFilm(.film2))
           
         let filmAction3 = UIAlertAction(title: Films.film3.rawValue, style: .default, handler: handlerFilm(.film3))
-        
+
+        let filmAction5 = UIAlertAction(title: Films.film5.rawValue, style: .default, handler: handlerFilm(.film5))
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){_ in
             print("Permission  not recieved")
         }
@@ -72,6 +75,7 @@ class ViewController: UIViewController {
         alert.addAction(filmAction1)
         alert.addAction(filmAction2)
         alert.addAction(filmAction3)
+        alert.addAction(filmAction5)
         alert.addAction(cancelAction)
         present(alert, animated: true)
     }
